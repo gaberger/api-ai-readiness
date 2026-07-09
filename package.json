@@ -4,8 +4,18 @@
   "description": "Grade any API for AI-native design — a scorecard + behavioral test suite from the \"Delivering APIs for AI\" framework.",
   "type": "module",
   "license": "MIT",
+  "author": "Gary Berger",
+  "homepage": "https://github.com/gaberger/api-ai-readiness#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gaberger/api-ai-readiness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gaberger/api-ai-readiness/issues"
+  },
   "bin": {
-    "apieval": "dist/cli.js"
+    "apieval": "dist/cli.js",
+    "apieval-mcp": "dist/mcp.js"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -24,7 +34,11 @@
     "build": "tsc -p tsconfig.json",
     "test": "node --test --import tsx test/*.test.ts",
     "score": "tsx src/cli.ts score",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run typecheck && npm run test && npm run build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "keywords": [
     "openapi",
@@ -42,5 +56,9 @@
   },
   "engines": {
     "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^4.4.3"
   }
 }

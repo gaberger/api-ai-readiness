@@ -16,6 +16,7 @@ export type {
 
 export { loadSpec } from "./spec.js";
 export { scoreSpec, scoreLoaded, gradeOp, type ScoreFilter } from "./scorecard.js";
+export { searchSpec, searchLoaded, detailLoaded, type EndpointSummary, type EndpointDetail } from "./search.js";
 export { generateTestSuite, generateFromSpec, type GenerateOptions } from "./prompts.js";
 export { runSuite, verdictOf, mockRunner, DEFAULT_TIMEOUT_MS } from "./runner.js";
 export { scorecardMarkdown, scorecardText, runSummaryMarkdown } from "./format.js";
