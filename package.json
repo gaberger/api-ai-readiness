@@ -1,0 +1,46 @@
+{
+  "name": "api-ai-readiness",
+  "version": "0.1.0",
+  "description": "Grade any API for AI-native design — a scorecard + behavioral test suite from the \"Delivering APIs for AI\" framework.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "apieval": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "SPEC.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test --import tsx test/*.test.ts",
+    "score": "tsx src/cli.ts score",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "keywords": [
+    "openapi",
+    "swagger",
+    "mcp",
+    "ai",
+    "agent",
+    "api-design",
+    "scorecard",
+    "readiness"
+  ],
+  "devDependencies": {
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
